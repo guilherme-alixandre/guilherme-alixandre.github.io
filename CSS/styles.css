@@ -1,0 +1,202 @@
+.body {
+    background: linear-gradient(135deg, #be4a02 0%, #8d4607 30%, #4b2301 60%, #392101 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: #e7b076;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    flex-direction: column; /* Garantir que o layout seja em coluna */
+}
+
+.content {
+    margin-left: 290px; /* Espaço para o header fixo */
+    display: flex;
+    flex-direction: column; /* Deixa main e footer em coluna */
+    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+    width: calc(100% - 250px); /* Ajusta a largura para ir até o final da tela */
+}
+
+.header {
+    position: fixed; /* Fixa o header na lateral esquerda */
+    top: 0;
+    left: 0;
+    width: 250px; /* Largura da barra lateral */
+    height: 100%; /* Preenche a altura toda da tela */
+    background-color: #3a3a3b;
+    padding: 20px;
+    color: #e7b076;
+    display: flex;
+    flex-direction: column; /* Alinha os itens do header verticalmente */
+    justify-content: flex-start;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+    padding-bottom: 50px;
+    border-right: 5px solid #e7b076; /* Borda direita para separar do conteúdo */
+}
+
+.header-title {
+    margin-bottom: 20px;
+    color: #e7b076;
+}
+
+.header-content {
+    display: flex;
+    position: relative; /* Para o header fixo */
+    flex-direction: column; /* Alinha os itens do header verticalmente */
+    justify-content: flex-start;
+    align-items: flex-start; 
+    padding-right: 30px; /* chega o texto para a esquerda */
+}
+
+/* Contatos dentro do header */
+.contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Aumenta 20% o tamanho */
+    transition: transform 0.2s ease; /* Faz a animação ficar suave */
+}
+
+.profile-photo {
+    width: 100px;                /* Ajuste o tamanho da sua foto */
+    height: 100px;
+    border-radius: 50%;         /* Deixa a imagem totalmente redonda */
+    object-fit: cover;          /* Mantém o formato da imagem sem distorcer */
+    position: relative; 
+    left: 65px;
+    z-index: 1; /* Coloca a imagem na frente de outros elementos */
+}
+
+.profile-photo:hover {
+    transform: scale(3);
+    transition: transform 0.3s ease; /* Faz a animação ficar suave */
+}
+
+.hr {
+    border: 0;
+    height: 1px;
+    background-color: #e7b076;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo principal verticalmente */
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    padding: 20px;
+    color: #e7b076;
+    flex-grow: 1; /* Faz o conteúdo principal ocupar o restante do espaço */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row; /* Alinha o conteúdo principal verticalmente */
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    padding: 20px;
+    color: #e7b076;
+}
+
+.card {
+    background-color: #3a3a3b; /* Cor de fundo do card */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin: 10px; /* Espaçamento externo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    width: calc(33% - 40px); /* Largura do card (3 cards por linha) */
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo principal verticalmente */
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    padding: 20px;
+    text-align: center;
+    height: 20px; /* Altura do footer */
+    color: #e7b076;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .header {
+        position: relative; /* Remove a fixação do header */
+        width: 100%; /* Faz o header ocupar toda a largura */
+        padding: 10px;
+        box-shadow: none; /* Remove a sombra lateral */
+    }
+
+    .content {
+        margin-left: 0; /* Remove o espaço para o header fixo */
+        width: 100%;
+    }
+
+    .profile-photo {
+        width: 80px; /* Ajusta a foto do perfil */
+        height: 80px;
+    }
+
+    .main-content {
+        flex-direction: column; /* Coloca os cards em coluna */
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Faz os cards ocuparem toda a largura */
+        margin: 10px 0; /* Ajusta o espaçamento */
+    }
+
+    .footer {
+        height: auto; /* Deixa o footer ajustar conforme o conteúdo */
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .header {
+        width: 100%; /* Deixa o header ocupar toda a largura */
+        padding: 10px;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .profile-photo {
+        width: 70px; /* Ajusta ainda mais a foto do perfil */
+        height: 70px;
+    }
+
+    .header-title {
+        font-size: 1.2rem; /* Reduz o tamanho do título */
+    }
+
+    .main-content {
+        padding: 10px; /* Ajusta o espaçamento do conteúdo */
+    }
+
+    .card {
+        width: 100%; /* Faz os cards ocuparem 100% da largura */
+        margin: 10px 0; /* Ajusta a margem */
+    }
+
+    .footer {
+        font-size: 0.8rem; /* Diminui a fonte do footer */
+    }
+}
