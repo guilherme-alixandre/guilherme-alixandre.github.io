@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .body {
     background: linear-gradient(135deg, #be4a02 0%, #8d4607 30%, #4b2301 60%, #392101 100%);
     background-attachment: fixed;
@@ -24,7 +28,7 @@
     position: fixed; /* Fixa o header na lateral esquerda */
     top: 0;
     left: 0;
-    width: 250px; /* Largura da barra lateral */
+    width: 290px; /* Largura da barra lateral */
     height: 100%; /* Preenche a altura toda da tela */
     background-color: #3a3a3b;
     padding: 20px;
@@ -49,7 +53,7 @@
     flex-direction: column; /* Alinha os itens do header verticalmente */
     justify-content: flex-start;
     align-items: flex-start; 
-    padding-right: 30px; /* chega o texto para a esquerda */
+    padding-right: 0px; /* chega o texto para a esquerda */
 }
 
 /* Contatos dentro do header */
@@ -76,6 +80,11 @@
     border-radius: 50%;         /* Deixa a imagem totalmente redonda */
     object-fit: cover;          /* Mantém o formato da imagem sem distorcer */
     position: relative; 
+    border-color: #e7b076; /* Cor da borda */
+    border-width: 5px; /* Largura da borda */
+    border-radius: 50%; /* Bordas arredondadas */
+    border-style: solid; /* Estilo da borda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
     left: 65px;
     z-index: 1; /* Coloca a imagem na frente de outros elementos */
 }
@@ -112,6 +121,13 @@
     color: #e7b076;
 }
 
+.main,
+.main-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .card {
     background-color: #3a3a3b; /* Cor de fundo do card */
     border-radius: 10px; /* Bordas arredondadas */
@@ -133,13 +149,38 @@
     color: #e7b076;
 }
 
+.icons{
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    flex-direction: row; /* Alinha os ícones verticalmente */
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
 /* Ajustes para telas pequenas */
 @media (max-width: 768px) {
+
+    .body {
+        width: 100vw; /* Garante que o body ocupe toda a largura */
+        padding: 0; /* Remove o padding do body */
+    }
+
     .header {
         position: relative; /* Remove a fixação do header */
         width: 100%; /* Faz o header ocupar toda a largura */
         padding: 10px;
         box-shadow: none; /* Remove a sombra lateral */
+    }
+
+    .header-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centraliza tudo */
+        text-align: center;
+    }
+
+    .header-content {
+        padding-right: 160px; /* Remove o padding do header */
+        align-items: flex-start; /* Centraliza os itens horizontalmente */
     }
 
     .content {
@@ -148,8 +189,10 @@
     }
 
     .profile-photo {
+        position: relative;
         width: 80px; /* Ajusta a foto do perfil */
         height: 80px;
+        margin-left: 78px;
     }
 
     .main-content {
@@ -169,18 +212,44 @@
 
 /* Ajustes para telas muito pequenas (smartphones) */
 @media (max-width: 480px) {
+
+    .body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     .header {
         width: 100%; /* Deixa o header ocupar toda a largura */
-        padding: 10px;
+        padding-left: 0px;
+        border:none; /* Remove a borda direita */
+    }
+
+    .header-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centraliza tudo */
+        text-align: center;
+    }
+
+    .header-content {
+        padding-right: 100px; /* Remove o padding do header */
+        align-items: flex-start; /* Centraliza os itens horizontalmente */
+    }
+
+    .hr {
+        width: 102vw;
     }
 
     .content {
         margin-left: 0;
+        width: 100%;
     }
 
     .profile-photo {
-        width: 70px; /* Ajusta ainda mais a foto do perfil */
-        height: 70px;
+        position: relative;
+        width: 90px; /* Ajusta ainda mais a foto do perfil */
+        height: 90px;
+        margin-right: 205px;
     }
 
     .header-title {
