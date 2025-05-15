@@ -61,6 +61,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px 50px; /* Espaçamento interno */
 }
 
 .social-icons {
@@ -68,10 +69,28 @@
     gap: 10px;
 }
 
-
 .social-icons img:hover {
     transform: scale(1.2); /* Aumenta 20% o tamanho */
     transition: transform 0.2s ease; /* Faz a animação ficar suave */
+}
+
+.button {
+    background-color: #e7b076; /* Cor de fundo do botão */
+    color: #3a3a3b; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 80px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    margin-top: 30px; /* Espaçamento acima do botão */
+    position: relative;
+}
+.button:hover {
+    background-color:  #3a3a3b; /* Cor de fundo ao passar o mouse */
+    color: #e7b076; /* Cor do texto ao passar o mouse */
+    border: 2px solid white; /* Borda branca ao hover */
+    border-radius: 5px; /* Mantém o mesmo arredondamento */
+    transition: background-color 0.3s ease;
 }
 
 .profile-photo {
