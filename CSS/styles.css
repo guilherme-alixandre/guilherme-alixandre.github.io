@@ -288,3 +288,34 @@
         font-size: 0.8rem; /* Diminui a fonte do footer */
     }
 }
+
+#cardPDF {
+    position: absolute;
+    top: 50px; /* ajuste conforme seu layout */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.fechar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e7b076;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.iframe {
+    height: 80vh;
+}

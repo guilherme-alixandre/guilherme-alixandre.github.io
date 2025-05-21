@@ -43,11 +43,9 @@
                 </div>
             </div>
             <div>
-                <button class="button" onclick="mostrarPDF()">Currículo</button>
+                
+            <button class="button" onclick="abrirCardPDF()">Currículo</button>
 
-                <div id="visualizacaoPDF" style="margin-top: 20px; display: none;">
-                    <iframe id="iframePDF" src="" width="100%" height="600px"></iframe>
-                </div>
             </div>
         </div>
         <hr class="hr">
@@ -87,6 +85,13 @@
     </header>
     <div class="content">
         <main class="main">
+
+
+                <div id="cardPDF" style="display: none;">
+                    <button class="fechar-btn" onclick="fecharCardPDF()">✖</button>
+                    <iframe src="" id="iframePDF" width="100%" class="iframe"></iframe>
+                </div>
+
             <h1><u>Um pouco sobre mim:</u></h1>
             <h2>Sou estudante de Engenharia de Software no Instituto Federal de Goiás (IFG), campus Inhumas, atualmente
                 no 5º período. Tenho uma forte paixão por desenvolvimento de software, sempre buscando entender as
@@ -157,13 +162,22 @@
     <script src="JS/Geral.js"></script>
 </body>
 <script>
-    function mostrarPDF() {
-        const div = document.getElementById('visualizacaoPDF');
+    function abrirCardPDF() {
+        const card = document.getElementById('cardPDF');
         const iframe = document.getElementById('iframePDF');
 
-        iframe.src = 'https://github.com/guilherme-alixandre/guilherme-alixandre.github.io/blob/master/Images/curriculo.pdf'; // Caminho para o PDF
-        div.style.display = 'block';
+        iframe.src = 'public/assets/curriculo.pdf'; // Caminho do PDF
+        card.style.display = 'block';
+    }
+
+    function fecharCardPDF() {
+        const card = document.getElementById('cardPDF');
+        const iframe = document.getElementById('iframePDF');
+
+        card.style.display = 'none';
+        iframe.src = ''; // Limpa para não manter o PDF carregado
     }
 </script>
+
 
 </html>
