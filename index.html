@@ -44,7 +44,9 @@
             </div>
             <div>
                 
-            <button class="button" onclick="abrirCardPDF()">Currículo</button>
+            <a href="public/assets/curriculo.pdf" target="_blank">
+                <button class="button">Currículo</button>
+            </a>
 
             </div>
         </div>
@@ -85,12 +87,6 @@
     </header>
     <div class="content">
         <main class="main">
-
-
-                <div id="cardPDF" style="display: none;">
-                    <button class="fechar-btn" onclick="fecharCardPDF()">✖</button>
-                    <iframe src="" id="iframePDF" width="100%" class="iframe"></iframe>
-                </div>
 
             <h1><u>Um pouco sobre mim:</u></h1>
             <h2>Sou estudante de Engenharia de Software no Instituto Federal de Goiás (IFG), campus Inhumas, atualmente
@@ -161,7 +157,7 @@
     </div>
     <script src="JS/Geral.js"></script>
 </body>
-<script>
+<!-- <script>
     function abrirCardPDF() {
         const card = document.getElementById('cardPDF');
         const iframe = document.getElementById('iframePDF');
@@ -177,7 +173,7 @@
         card.style.display = 'none';
         iframe.src = ''; // Limpa para não manter o PDF carregado
     }
-</script>
+</script> -->
 
 
 </html>
