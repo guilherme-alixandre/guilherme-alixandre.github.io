@@ -3,17 +3,19 @@
 }
 
 .body {
-    background: linear-gradient(135deg, #be4a02 0%, #8d4607 30%, #4b2301 60%, #392101 100%);
+    background: linear-gradient(135deg, #3102be 0%, #17078d 30%, #02014b 60%, #010639 100%); /* Gradiente de fundo */
     background-attachment: fixed;
     background-size: cover;
+    background-color: none;
     font-family: 'Arial', sans-serif;
-    color: #e7b076;
+    color: #7876e7; /* Cor do texto */
     margin: 0;
     padding: 0;
     display: flex;
     position: relative;
     min-height: 100vh;
     flex-direction: column; /* Garantir que o layout seja em coluna */
+    overflow-x: hidden;
 }
 
 .content {
@@ -22,29 +24,34 @@
     flex-direction: column; /* Deixa main e footer em coluna */
     min-height: 100vh; /* Garante que ocupe toda a altura da tela */
     width: calc(100% - 250px); /* Ajusta a largura para ir até o final da tela */
+    padding: 20px; /* Espaçamento interno */
 }
+
+
+
 
 .header {
     position: fixed; /* Fixa o header na lateral esquerda */
     top: 0;
     left: 0;
-    width: 290px; /* Largura da barra lateral */
+    width: 20vw; /* Largura da barra lateral */
     height: 100%; /* Preenche a altura toda da tela */
     background-color: #3a3a3b;
     padding: 20px;
-    color: #e7b076;
+    color: #017595; /* Cor do texto */
     display: flex;
     flex-direction: column; /* Alinha os itens do header verticalmente */
     justify-content: flex-start;
     align-items: center; /* Centraliza os itens horizontalmente */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
     padding-bottom: 50px;
-    border-right: 5px solid #e7b076; /* Borda direita para separar do conteúdo */
+    border-right: 5px solid #010195; /* Borda direita para separar do conteúdo */
+    z-index: 1000; /* Coloca o header acima de outros elementos */
 }
 
 .header-title {
     margin-bottom: 20px;
-    color: #e7b076;
+    color: #ffffff; /* Cor do título */
 }
 
 .header-content {
@@ -75,7 +82,7 @@
 }
 
 .button {
-    background-color: #e7b076; /* Cor de fundo do botão */
+    background-color: #017595; /* Cor de fundo do botão */
     color: #3a3a3b; /* Cor do texto do botão */
     border: none; /* Remove a borda padrão */
     padding: 10px 80px; /* Espaçamento interno do botão */
@@ -87,7 +94,7 @@
 }
 .button:hover {
     background-color:  #3a3a3b; /* Cor de fundo ao passar o mouse */
-    color: #e7b076; /* Cor do texto ao passar o mouse */
+    color: #017595; /* Cor do texto ao passar o mouse */
     border: 2px solid white; /* Borda branca ao hover */
     border-radius: 5px; /* Mantém o mesmo arredondamento */
     transition: background-color 0.3s ease;
@@ -99,7 +106,7 @@
     border-radius: 50%;         /* Deixa a imagem totalmente redonda */
     object-fit: cover;          /* Mantém o formato da imagem sem distorcer */
     position: relative; 
-    border-color: #e7b076; /* Cor da borda */
+    border-color: #017595; /* Cor da borda */
     border-width: 5px; /* Largura da borda */
     border-radius: 50%; /* Bordas arredondadas */
     border-style: solid; /* Estilo da borda */
@@ -116,18 +123,28 @@
 .hr {
     border: 0;
     height: 1px;
-    background-color: #e7b076;
+    background-color: #017595; /* Cor da linha */
     margin: 20px 0;
+    width: 100%;
+}
+
+.back-image {
+    position: fixed;
+    background-image: url('../Images/ImagemFundo.jpg');
+    filter: blur(8px);
+    background-size: cover;
+    height: 100vh;
     width: 100%;
 }
 
 .main {
     display: flex;
+    position: relative;
     flex-direction: column; /* Alinha o conteúdo principal verticalmente */
     justify-content: flex-start; /* Alinha o conteúdo no topo */
     align-items: flex-start; /* Alinha o conteúdo à esquerda */
     padding: 20px;
-    color: #e7b076;
+    color: #ffffff;
     flex-grow: 1; /* Faz o conteúdo principal ocupar o restante do espaço */
 }
 
@@ -137,7 +154,7 @@
     justify-content: flex-start; /* Alinha o conteúdo no topo */
     align-items: flex-start; /* Alinha o conteúdo à esquerda */
     padding: 20px;
-    color: #e7b076;
+    color: #ffffff;
 }
 
 .main,
@@ -161,11 +178,15 @@
     display: flex;
     flex-direction: column; /* Alinha o conteúdo principal verticalmente */
     justify-content: flex-start; /* Alinha o conteúdo no topo */
-    align-items: flex-start; /* Alinha o conteúdo à esquerda */
-    padding: 20px;
     text-align: center;
-    height: 20px; /* Altura do footer */
-    color: #e7b076;
+    height: 50px; /* Altura do footer */
+    width: 80%;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-top: 5px;
+    background-color: #0b0131;
 }
 
 .icons{
@@ -204,7 +225,8 @@
 
     .content {
         margin-left: 0; /* Remove o espaço para o header fixo */
-        width: 100%;
+        width: 80vw;
+        display: flex;
     }
 
     .profile-photo {
@@ -219,6 +241,18 @@
         align-items: center;
     }
 
+    .back-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../Images/ImagemFundo.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: blur(8px);
+    }
+
     .card {
         width: 100%; /* Faz os cards ocuparem toda a largura */
         margin: 10px 0; /* Ajusta o espaçamento */
@@ -226,6 +260,7 @@
 
     .footer {
         height: auto; /* Deixa o footer ajustar conforme o conteúdo */
+        width: 100%; /* Faz o footer ocupar toda a largura */
     }
 }
 
@@ -286,6 +321,7 @@
 
     .footer {
         font-size: 0.8rem; /* Diminui a fonte do footer */
+        width: 100%; /* Faz o footer ocupar toda a largura */
     }
 }
 
